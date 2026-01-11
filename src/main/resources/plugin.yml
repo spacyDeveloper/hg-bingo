@@ -1,0 +1,7 @@
+name: hg-bingo
+version: '1.0-SNAPSHOT'
+main: net.spacydev.bingo.BingoMain
+api-version: '1.21'
+commands:
+  bingo:
+    description: Öffnet die Bingo Karte
