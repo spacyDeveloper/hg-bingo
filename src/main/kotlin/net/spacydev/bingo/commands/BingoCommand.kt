@@ -13,9 +13,8 @@ class BingoCommand : CommandExecutor {
         if (sender !is Player) return true
 
         if (args.isNotEmpty() && args[0].equals("start", true)) {
-            val world = BingoWorldManager.createWorldForPlayer(sender.uniqueId)
-            sender.teleport(world.spawnLocation)
-            sender.sendMessage("§aDu bist in einer neuen Bingo-Welt!")
+            val rid = bingo.bingo.BingoManager.startRound()
+            sender.sendMessage("§aBingo-Runde gestartet (id=$rid)")
             return true
         }
 
