@@ -21,6 +21,7 @@ object BingoWorldManager {
     }
 
     private fun createNewWorld(baseName: String): World {
+        val baseName_ = ""
         val name = "$baseName_${System.currentTimeMillis()}"
         val creator = WorldCreator(name)
             .environment(World.Environment.NORMAL)

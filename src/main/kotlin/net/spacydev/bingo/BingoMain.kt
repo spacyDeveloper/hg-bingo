@@ -1,7 +1,7 @@
 package net.spacydev.bingo
 
-import bingo.commands.BingoCommand
-import bingo.listeners.ItemPickupListener
+import net.spacydev.bingo.commands.BingoCommand
+import net.spacydev.bingo.listeners.ItemPickupListener
 import org.bukkit.plugin.java.JavaPlugin
 
 class BingoMain : JavaPlugin() {

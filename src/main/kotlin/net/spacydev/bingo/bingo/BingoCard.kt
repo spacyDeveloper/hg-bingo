@@ -5,15 +5,27 @@ import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.ItemMeta
 import kotlin.random.Random
 
-class BingoCard(private val items: List<Material>) {
+class BingoCard(val items: List<Material>) {
 
-    private val marked = BooleanArray(25)
+    val marked = BooleanArray(25)
 
-    fun mark(material: Material) {
-        items.forEachIndexed { index, mat ->
-            if (mat == material) marked[index] = true
+    fun updateBingoState() {
+        if (hasBingo()) {
+            println("Bingo! 🎉")
         }
     }
+
+
+    fun mark(material: Material): Boolean {
+        val index = items.indexOf(material)
+        if (index == -1) return false
+        if (marked[index]) return false
+
+        marked[index] = true
+        updateBingoState()
+        return true
+    }
+
 
     fun hasBingo(): Boolean {
         val lines = listOf(
